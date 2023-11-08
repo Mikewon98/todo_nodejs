@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
   res.send(`Hello World!!`);
 });
 
-app.get("getUserTodoList/:email", async function (req, res) {
+app.get("getUserTodoList/:userId", async function (req, res) {
   try {
     var todos = await TodoModel.findOne({ userId: req.params.userId });
     res.json(todos);
